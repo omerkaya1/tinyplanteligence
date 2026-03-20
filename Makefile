@@ -1,8 +1,14 @@
 .DEFAULT_GOAL := help
 
-.PHONY: build
-build: ## build project
-	tinygo flash --target=arduino main.go
+.PHONY: trial
+trial: ## build trial programme (may contain different peripherals for testing purposes)
+	@tinygo \
+	flash --target=arduino ./cmd/trial/main.go
+
+.PHONY: moisture-sensor
+moisture-sensor: ## build moisture sensor programme
+	@tinygo \
+	flash --target=arduino ./cmd/moisture-sensor/main.go
 
 .PHONY: help
 help: ## print this help and exit

@@ -2,13 +2,15 @@ package soilmoisture
 
 import "machine"
 
+// Calibrated results gathered from the HW080 Sensor.
 const (
-	HW080ArduinoDry = 64352
-	HW080ArduinoWet = 25250
+	HW080Dry = 64352 // the value for a completely dry sensor.
+	HW080Wet = 25250 // the value sensor shows when it is completely submerged in water.
 )
 
 const totalCategories = 6
 
+// MoistureLevel represents the level of moisture in the soil.
 type MoistureLevel uint8
 
 const (
@@ -66,7 +68,7 @@ func (s *Sensor) Read() MoistureLevel {
 	switch {
 	case val >= s.dryThreshold:
 		return CompletelyDry
-	case val >= s.dryThreshold-s.category: //
+	case val >= s.dryThreshold-s.category:
 		return Dry
 	case val >= s.dryThreshold-s.category*2:
 		return SlightlyDry
