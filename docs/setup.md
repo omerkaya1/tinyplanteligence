@@ -31,7 +31,13 @@
 
 ### Serial port
 
-#### First use
+#### Native (preferable)
+
+`tinygo monitor --baudrate=9600`
+
+#### PuTTy
+
+##### First use
 
 1. Install Putty - `sudo apt-get install putty` || `brew install Putty`
 2. Run Putty in terminal and connect to the serial port: `putty` -> Session -> Connection type -> Serial
@@ -39,7 +45,7 @@
 4. Save the current or create a new session for re-use.
 5. Press `Open`
 
-#### Re-use
+##### Re-use
 
 1. Run `putty` and select the previously stored session
 2. Load the stored session
