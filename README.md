@@ -2,12 +2,14 @@
 
 The project is used for automated irrigation of plants.
 
-## Periferal devices
-* ~~Buzzer~~ on-board LED
-* Submersible Water Pump (3-5V)
+## Documentation
 
-## Sensors
-* Soil Moisture Sensor
+| Resource | Description |
+| --- | --- |
+| [docs](./docs/) | project documentation |
+| [troubleshooting](./docs/troubleshooting.md) | troubleshooting information |
+| [driver](./docs/driver.md) | periferal device drivers |
+| [setup](./docs/setup.md) | setup instructions |
 
 ## Makefile targets
 
