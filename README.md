@@ -16,3 +16,8 @@ The project is used for automated irrigation of plants.
     trial                          build trial programme (may contain different peripherals for testing purposes)
     moisture-sensor                build moisture sensor programme
     help                           print this help and exit
+
+## Resources
+
+- [TinyGo Playground](https://play.tinygo.org/)
+- [TinyGo Guides](https://tinygo.org/docs/guides/)
