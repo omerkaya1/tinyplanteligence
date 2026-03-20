@@ -8,45 +8,24 @@ import (
 	soilmoisture "github.com/omerkaya1/tinyplanteligence/internal/driver/sensor/soil-moisture"
 )
 
-const (
-	operationInterval = time.Minute
-)
+const operationInterval = time.Minute
 
 func main() {
 	// init periferal
 	machine.InitADC()
 
-	// machine.LED.Configure(machine.PinConfig{Mode: machine.PinOutput})
-
-	// first sensor
 	ms1 := soilmoisture.New(soilmoisture.Params{
-		DryThreshold: soilmoisture.HW080ArduinoDry,
-		WetThreshold: soilmoisture.HW080ArduinoWet,
+		DryThreshold: soilmoisture.HW080Dry,
+		WetThreshold: soilmoisture.HW080Wet,
 		Voltage:      machine.D2,
 		CtrlPin:      machine.ADC2,
 	})
-	// second sensor
-	ms2 := soilmoisture.New(soilmoisture.Params{
-		DryThreshold: soilmoisture.HW080ArduinoDry,
-		WetThreshold: soilmoisture.HW080ArduinoWet,
-		Voltage:      machine.D3,
-		CtrlPin:      machine.ADC3,
-	})
 
-	// buzzer
 	// NOTE: instead of a buzzer, a LED is used for now
 	beeper := buzzer.New(machine.LED)
 
-	// water pump
-	// TODO(omerkaya1): add water pump
-	// pump := pump.New(machine.D5)
-	// _ = pump
-	// ...
-
 	for {
 		checkSensor(ms1, beeper, 1)
-		checkSensor(ms2, beeper, 2)
-
 		time.Sleep(operationInterval)
 	}
 }

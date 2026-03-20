@@ -8,3 +8,9 @@ The project is used for automated irrigation of plants.
 
 ## Sensors
 * Soil Moisture Sensor
+
+## Makefile targets
+
+    trial                          build trial programme (may contain different peripherals for testing purposes)
+    moisture-sensor                build moisture sensor programme
+    help                           print this help and exit
