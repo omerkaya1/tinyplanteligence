@@ -18,7 +18,7 @@ this document describes the general approach to setting up a water pump.
 - Connect `GND` to the `GND` of the breadboard;
 - Connect `S` (Signal) of the relay module to any digital pin on the `D` of the microcontroller (e.g., `D7`).
 
-## Controller
+### Controller
 
 - Connect `GND` to the breadboard `GND`;
 - Connect `VIN` to the breadboard `+` (`VIN`).
