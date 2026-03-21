@@ -10,6 +10,11 @@ moisture-sensor: ## build moisture sensor programme
 	@tinygo \
 	flash --target=arduino ./cmd/moisture-sensor/main.go
 
+.PHONY: pump
+pump: ## build pump programme
+	@tinygo \
+	flash --target=arduino ./cmd/pump/main.go
+
 .PHONY: help
 help: ## print this help and exit
 	@echo "Usage: make [target]"
