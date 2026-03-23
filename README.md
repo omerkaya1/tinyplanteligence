@@ -17,6 +17,7 @@ The project is used for automated irrigation of plants.
     trial                          build trial programme (may contain different peripherals for testing purposes)
     moisture-sensor                build moisture sensor programme
     pump                           build pump programme
+    keyboard                       build keyboard programme
     help                           print this help and exit
 
 ## Resources
