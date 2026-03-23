@@ -15,6 +15,11 @@ pump: ## build pump programme
 	@tinygo \
 	flash --target=arduino ./cmd/pump/main.go
 
+.PHONY: keyboard
+keyboard: ## build keyboard programme
+	@tinygo \
+	flash --target=arduino ./cmd/keyboard/main.go && tinygo monitor --target=arduino --baudrate=9600
+
 .PHONY: help
 help: ## print this help and exit
 	@echo "Usage: make [target]"
