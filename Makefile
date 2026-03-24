@@ -27,6 +27,11 @@ servo: ## build servo programme
 	@tinygo \
 	flash --target=$(TARGET) ./cmd/servo/main.go && tinygo monitor --target=$(TARGET) --baudrate=9600
 
+.PHONY: ultrasound-sensor
+ultrasound-sensor: ## build ultrasound-sensor programme
+	@tinygo \
+	flash --target=$(TARGET) ./cmd/ultrasound-sensor/main.go && tinygo monitor --target=$(TARGET) --baudrate=9600
+
 .PHONY: help
 help: ## print this help and exit
 	@echo "Usage: make [target]"
