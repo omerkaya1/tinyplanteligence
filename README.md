@@ -19,6 +19,7 @@ The project is used for automated irrigation of plants.
     pump                           build pump programme
     keyboard                       build keyboard programme
     servo                          build servo programme
+    ultrasound-sensor              build ultrasound-sensor programme
     help                           print this help and exit
 
 ## Resources
