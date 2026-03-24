@@ -1,24 +1,31 @@
 .DEFAULT_GOAL := help
 
+TARGET := arduino
+
 .PHONY: trial
 trial: ## build trial programme (may contain different peripherals for testing purposes)
 	@tinygo \
-	flash --target=arduino ./cmd/trial/main.go
+	flash --target=$(TARGET) ./cmd/trial/main.go
 
 .PHONY: moisture-sensor
 moisture-sensor: ## build moisture sensor programme
 	@tinygo \
-	flash --target=arduino ./cmd/moisture-sensor/main.go
+	flash --target=$(TARGET) ./cmd/moisture-sensor/main.go
 
 .PHONY: pump
 pump: ## build pump programme
 	@tinygo \
-	flash --target=arduino ./cmd/pump/main.go
+	flash --target=$(TARGET) ./cmd/pump/main.go
 
 .PHONY: keyboard
 keyboard: ## build keyboard programme
 	@tinygo \
-	flash --target=arduino ./cmd/keyboard/main.go && tinygo monitor --target=arduino --baudrate=9600
+	flash --target=$(TARGET) ./cmd/keyboard/main.go && tinygo monitor --target=$(TARGET) --baudrate=9600
+
+.PHONY: servo
+servo: ## build servo programme
+	@tinygo \
+	flash --target=$(TARGET) ./cmd/servo/main.go && tinygo monitor --target=$(TARGET) --baudrate=9600
 
 .PHONY: help
 help: ## print this help and exit
